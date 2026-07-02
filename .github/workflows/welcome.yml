@@ -36,7 +36,7 @@ jobs:
           - 💰 [Support development](DONATE.md)
           - 📢 Share with your network
 
-          **Created by [Yashab Alam](https://github.com/yashab-cyber) & [ZehraSec](https://www.zehrasec.com)**
+          **Created by [Yashab Alam](https://github.com/yashab-cyber)**
 
           Thank you for helping make cybersecurity more accessible through AI! 🛡️
           `;
@@ -82,7 +82,7 @@ jobs:
 
           **Welcome to the HackGPT Enterprise family! 🚀**
 
-          *Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber) & [ZehraSec](https://www.zehrasec.com)*
+          *Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber)*
           `;
 
           github.rest.issues.createComment({

@@ -88,10 +88,10 @@ We maintain a security researcher hall of fame to recognize those who help impro
 
 ### 🎁 Acknowledgment Options
 - **Public Recognition**: Listed in security advisories and hall of fame
-- **Social Media**: Mentioned on ZehraSec social media channels
+- **Social Media**: Mentioned on project social media channels
 - **Conference Mentions**: Acknowledged at security conferences (when appropriate)
 - **Anonymous**: Option to remain anonymous if preferred
-- **Swag**: HackGPT and ZehraSec branded items for significant contributions
+- **Swag**: HackGPT branded items for significant contributions
 
 ## 🚀 Bug Bounty Program
 
@@ -99,7 +99,7 @@ We maintain a security researcher hall of fame to recognize those who help impro
 While we don't currently have a formal bug bounty program, we do provide:
 
 - **Recognition**: Public acknowledgment of your contribution
-- **Merchandise**: ZehraSec branded items
+- **Merchandise**: HackGPT branded items
 - **Recommendation**: LinkedIn recommendations for your security research skills
 - **Future Opportunities**: First consideration for any future bug bounty programs
 
@@ -168,7 +168,6 @@ While we don't currently have a formal bug bounty program, we do provide:
 ### 🌐 Connect with Us
 - **GitHub**: [@yashab-cyber](https://github.com/yashab-cyber)
 - **LinkedIn**: [Yashab Alam](https://linkedin.com/in/yashab-alam)
-- **Company**: [ZehraSec](https://www.zehrasec.com)
 - **WhatsApp**: [Business Channel](https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q)
 
 ### 🎯 Security Conferences
@@ -234,8 +233,6 @@ This security policy is reviewed and updated quarterly to ensure it remains curr
 
 **Security Team Lead**: Yashab Alam  
 **Email**: yashabalam707@gmail.com  
-**Company**: ZehraSec  
-**Website**: [www.zehrasec.com](https://www.zehrasec.com)
 
 ---
 

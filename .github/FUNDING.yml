@@ -15,7 +15,6 @@ otechie: # Add Otechie username if available
 # Custom funding methods
 custom: [
   "https://paypal.me/yashab07",
-  "https://www.zehrasec.com/donate",
   "mailto:yashabalam707@gmail.com?subject=HackGPT%20Enterprise%20Sponsorship%20Inquiry"
 ]
 

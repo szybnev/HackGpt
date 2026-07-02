@@ -6,7 +6,7 @@
 
 ## 🚀 About HackGPT Enterprise
 
-HackGPT Enterprise is a revolutionary AI-powered penetration testing platform that combines cutting-edge artificial intelligence with enterprise-grade security assessment capabilities. Created by **Yashab Alam**, founder of **ZehraSec**, this platform is transforming how organizations approach cybersecurity testing.
+HackGPT Enterprise is a revolutionary AI-powered penetration testing platform that combines cutting-edge artificial intelligence with enterprise-grade security assessment capabilities. Created by **Yashab Alam**, this platform is transforming how organizations approach cybersecurity testing.
 
 ### 🎯 Why Sponsor HackGPT?
 
@@ -58,7 +58,7 @@ HackGPT Enterprise is a revolutionary AI-powered penetration testing platform th
 ### 🎯 Brand Visibility
 - **GitHub Repository**: 15,000+ monthly visitors
 - **Documentation Site**: Growing traffic from security professionals
-- **Social Media**: ZehraSec channels reach 50,000+ cybersecurity professionals
+- **Social Media**: Our channels reach 50,000+ cybersecurity professionals
 - **Conferences**: Speaking opportunities at major security conferences
 
 ### 📊 Marketing ROI
@@ -92,7 +92,7 @@ HackGPT Enterprise is a revolutionary AI-powered penetration testing platform th
 - **Equity Position**: Early-stage equity in innovative cybersecurity company
 - **Board Seat**: Opportunity for board representation (significant investments)
 - **Strategic Advisory**: Input on product roadmap and business strategy
-- **Network Access**: Introduction to ZehraSec's enterprise customer network
+- **Network Access**: Introduction to our enterprise network
 
 ## 🌟 Featured Sponsors
 
@@ -147,7 +147,6 @@ HackGPT Enterprise is a revolutionary AI-powered penetration testing platform th
 - **Email**: yashabalam707@gmail.com
 - **Subject**: "HackGPT Enterprise Partnership Inquiry"
 - **LinkedIn**: [Connect with Yashab Alam](https://linkedin.com/in/yashab-alam)
-- **Company**: [ZehraSec Partnership Program](https://www.zehrasec.com)
 
 ## 💎 Cryptocurrency Donations
 
@@ -171,11 +170,6 @@ HackGPT Enterprise is a revolutionary AI-powered penetration testing platform th
 - **Instagram**: [@yashab.alam](https://instagram.com/yashab.alam)
 - **Email**: yashabalam707@gmail.com
 
-### 🏢 ZehraSec - Company
-- **Website**: [www.zehrasec.com](https://www.zehrasec.com)
-- **LinkedIn**: [ZehraSec Company](https://linkedin.com/company/zehrasec)
-- **Instagram**: [@_zehrasec](https://instagram.com/_zehrasec)
-- **Twitter/X**: [@zehrasec](https://x.com/zehrasec)
 - **WhatsApp Business**: [Join Channel](https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q)
 
 ## 🎯 Next Steps
@@ -206,7 +200,7 @@ HackGPT Enterprise is a revolutionary AI-powered penetration testing platform th
 *"Supporting HackGPT has connected us with the cutting edge of AI-powered cybersecurity. The visibility in their community has been tremendous for our brand."* - Future Gold Sponsor
 
 ### 📊 Partnership Results
-*"Our partnership with ZehraSec and HackGPT has opened new market opportunities and enhanced our security testing capabilities."* - Future Strategic Partner
+*"Our partnership with HackGPT has opened new market opportunities and enhanced our security testing capabilities."* - Future Strategic Partner
 
 ## ⚖️ Legal & Compliance
 
@@ -234,6 +228,6 @@ Every sponsor and supporter helps accelerate the development of HackGPT Enterpri
 
 ---
 
-*Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber) & [ZehraSec](https://www.zehrasec.com)*
+*Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber)*
 
 *Last Updated: August 18, 2025*

@@ -12,7 +12,7 @@
 
 ## 🙏 Why Your Support Matters
 
-**HackGPT Enterprise** is an advanced open-source cybersecurity platform created by **Yashab Alam**, founder and CEO of ZehraSec, dedicated to revolutionizing penetration testing with AI-powered automation, intelligent exploit generation, and enterprise-grade security assessments. Your donations help us:
+**HackGPT Enterprise** is an advanced open-source cybersecurity platform created by **Yashab Alam**, dedicated to revolutionizing penetration testing with AI-powered automation, intelligent exploit generation, and enterprise-grade security assessments. Your donations help us:
 
 - 🚀 **Accelerate Development** - AI-powered vulnerability assessment, intelligent exploitation automation, and advanced enterprise penetration testing
 - 🔒 **Enhanced Security** - Machine learning-driven threat detection, automated payload generation, and advanced evasion techniques
@@ -193,14 +193,7 @@ All payment methods are verified and legitimate. For security concerns:
 - **GitHub Issues:** [HackGPT Repository](https://github.com/yashab-cyber/HackGPT)
 - **WhatsApp:** [Business Channel](https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q)
 
-### 🌐 **Connect with ZehraSec**
 
-**Official Channels:**
-- 🌐 **Website:** [www.zehrasec.com](https://www.zehrasec.com)
-- 📸 **Instagram:** [@_zehrasec](https://www.instagram.com/_zehrasec?igsh=bXM0cWl1ejdoNHM4)
-- 📘 **Facebook:** [ZehraSec Official](https://www.facebook.com/profile.php?id=61575580721849)
-- 🐦 **X (Twitter):** [@zehrasec](https://x.com/zehrasec?t=Tp9LOesZw2d2yTZLVo0_GA&s=08)
-- 💼 **LinkedIn:** [ZehraSec Company](https://www.linkedin.com/company/zehrasec)
 
 ### 👨‍💻 **Connect with Yashab Alam**
 - 💻 **GitHub:** [@yashab-cyber](https://github.com/yashab-cyber)
@@ -282,20 +275,8 @@ Every contribution, no matter the size, helps make Metasploit-AI better for ever
 <div align="center">
   <img src="public/hackgpt-logo.png" alt="HackGPT Enterprise" width="150" height="auto">
   
-  <h3>**Made with ❤️ by Yashab Alam (Founder of ZehraSec) and the HackGPT development team**</h3>
-  
-  <p><em>Last updated: August 2025</em></p>
-</div>
-
----
-
-<div align="center">
-  <h4>💜 Made with ❤️ by Yashab Alam (Founder of ZehraSec) and the HackGPT team</h4>
-  
-  <p>
-    <strong>ZehraSec Website:</strong> <a href="https://www.zehrasec.com">www.zehrasec.com</a><br>
-    <strong>Repository:</strong> <a href="https://github.com/yashab-cyber/HackGPT">github.com/yashab-cyber/HackGPT</a>
-  </p>
+  <h3>**Made with ❤️ by Yashab Alam and the HackGPT development team**</h3>
+  <p><strong>Repository:</strong> <a href="https://github.com/yashab-cyber/HackGPT">github.com/yashab-cyber/HackGPT</a></p>
   
   <p><em>Last updated: August 2025</em></p>
 </div>

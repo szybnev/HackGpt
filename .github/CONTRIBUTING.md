@@ -175,7 +175,7 @@ All contributors are recognized in:
 - **CONTRIBUTORS.md**: List of all project contributors
 - **GitHub Contributors**: Automatic recognition by GitHub
 - **Release Notes**: Major contributors mentioned in releases
-- **Social Media**: Contributors highlighted on ZehraSec social channels
+- **Social Media**: Contributors highlighted on project social channels
 
 ### Sponsorship Recognition
 - **Bronze Sponsors ($5-24)**: Name in CONTRIBUTORS.md
@@ -284,15 +284,7 @@ Currently seeking translators for:
 - **Investment Opportunities**: Include "INVESTMENT" in subject line
 - **LinkedIn**: [Yashab Alam](https://www.linkedin.com/in/yashab-alam)
 
-## 🏢 About ZehraSec
 
-**ZehraSec** is a cybersecurity research and development company founded by Yashab Alam, focused on advancing AI-powered security solutions.
-
-**Connect with ZehraSec:**
-- 🌐 **Website**: [www.zehrasec.com](https://www.zehrasec.com)
-- 📸 **Instagram**: [@_zehrasec](https://www.instagram.com/_zehrasec)
-- 💼 **LinkedIn**: [ZehraSec Company](https://www.linkedin.com/company/zehrasec)
-- 🐦 **Twitter**: [@zehrasec](https://x.com/zehrasec)
 
 ---
 

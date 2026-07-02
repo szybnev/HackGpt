@@ -243,7 +243,7 @@ The project demonstrates enterprise-level software development practices while m
 ---
 
 ## 🔗 Connect with Developer & Founder
-Yashab Alam (Founder & CEO of ZehraSec)
+Yashab Alam
 - **Instagram**: [https://www.instagram.com/yashabcyber](https://www.instagram.com/yashabcyber)
 - **X (Twitter)**: [https://x.com/Yashab_cyber](https://x.com/Yashab_cyber)
 - **LinkedIn**: [https://www.linkedin.com/in/yashab-alam](https://www.linkedin.com/in/yashab-alam)

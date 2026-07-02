@@ -141,7 +141,7 @@ jobs:
       id: meta
       uses: docker/metadata-action@v5
       with:
-        images: zehrasec/hackgpt-enterprise
+        images: yashabcyber/hackgpt-enterprise
         tags: |
           type=ref,event=branch
           type=ref,event=pr

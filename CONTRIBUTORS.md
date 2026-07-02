@@ -11,17 +11,12 @@ Thank you to all the amazing people who have contributed to making HackGPT Enter
 ### 👨‍💼 Founder & Lead Developer
 **Yashab Alam** - [@yashab-cyber](https://github.com/yashab-cyber)
 - 🏢 **Role**: Founder, CEO & Lead Developer
-- 🏛️ **Company**: ZehraSec
+- 🏛️ **Company**: HackGPT
 - 💡 **Contributions**: Project architecture, AI integration, security frameworks, enterprise features
 - 🌐 **Connect**: [LinkedIn](https://linkedin.com/in/yashab-alam) | [Instagram](https://instagram.com/yashabcyber) | [X (Twitter)](https://x.com/Yashab_cyber) | [Threads](https://www.threads.com/@yashabcyber) | [Email](mailto:yashabalam9@gmail.com)
 - 🎯 **Specialties**: AI/ML, Cybersecurity, Penetration Testing, Enterprise Architecture
 
-### 🏢 ZehraSec Team
-**ZehraSec Development Team**
-- 🏛️ **Organization**: [ZehraSec](https://www.zehrasec.com)
-- 💡 **Contributions**: Security research, compliance frameworks, enterprise features
-- 🌐 **Connect**: [Website](https://www.zehrasec.com) | [LinkedIn](https://linkedin.com/company/zehrasec) | [Instagram](https://instagram.com/_zehrasec)
-- 🎯 **Focus**: Cybersecurity solutions, AI research, enterprise security
+
 
 ## 💰 Financial Contributors & Sponsors
 
@@ -246,11 +241,10 @@ Thank you to all the amazing people who have contributed to making HackGPT Enter
 - **WhatsApp**: [Business Channel](https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q)
 
 ### 🌐 Social Media
-- **LinkedIn**: [Yashab Alam](https://linkedin.com/in/yashab-alam) | [ZehraSec](https://linkedin.com/company/zehrasec)
-- **Instagram**: [@yashabcyber](https://instagram.com/yashabcyber) | [@_zehrasec](https://instagram.com/_zehrasec)
-- **Twitter/X**: [@Yashab_cyber](https://x.com/Yashab_cyber) | [@zehrasec](https://x.com/zehrasec)
+- **LinkedIn**: [Yashab Alam](https://linkedin.com/in/yashab-alam)
+- **Instagram**: [@yashabcyber](https://instagram.com/yashabcyber)
+- **Twitter/X**: [@Yashab_cyber](https://x.com/Yashab_cyber)
 - **Threads**: [@yashabcyber](https://www.threads.com/@yashabcyber)
-- **Website**: [ZehraSec.com](https://www.zehrasec.com)
 
 ## 📈 Contribution Guidelines
 

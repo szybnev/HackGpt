@@ -169,7 +169,7 @@ Please provide any additional context, specific requirements, or questions you h
 
 ## 🚀 About HackGPT Enterprise
 
-HackGPT Enterprise is an AI-powered penetration testing platform that combines advanced artificial intelligence with enterprise-grade security assessment capabilities. Created by Yashab Alam and ZehraSec, it represents the cutting edge of automated cybersecurity testing.
+HackGPT Enterprise is an AI-powered penetration testing platform that combines advanced artificial intelligence with enterprise-grade security assessment capabilities. Created by Yashab Alam, it represents the cutting edge of automated cybersecurity testing.
 
 **Key Features:**
 - AI-powered vulnerability detection
@@ -180,9 +180,7 @@ HackGPT Enterprise is an AI-powered penetration testing platform that combines a
 
 **Contact Information:**
 - **Founder**: Yashab Alam
-- **Company**: ZehraSec
 - **Email**: yashabalam707@gmail.com
-- **Website**: [www.zehrasec.com](https://www.zehrasec.com)
 - **LinkedIn**: [linkedin.com/in/yashab-alam](https://linkedin.com/in/yashab-alam)
 
 ---

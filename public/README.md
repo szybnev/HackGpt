@@ -19,7 +19,7 @@ This folder contains the official brand assets for HackGPT Enterprise.
 - **Open Source**: Include in derivative works under MIT license terms
 
 ### ❌ Prohibited Usage
-- **Commercial Use**: Without explicit permission from ZehraSec
+- **Commercial Use**: Without explicit permission from the author
 - **Trademark Infringement**: Don't claim ownership of the logo
 - **Modification**: Don't alter, distort, or modify the logo
 - **Endorsement**: Don't imply endorsement without permission
@@ -61,15 +61,14 @@ This folder contains the official brand assets for HackGPT Enterprise.
 **For brand usage questions or permissions:**
 - **Email**: yashabalam707@gmail.com
 - **Subject**: "HackGPT Brand Usage Request"
-- **Company**: [ZehraSec](https://www.zehrasec.com)
 
 ## ⚖️ Legal Information
 
 ### Copyright
-© 2025 Yashab Alam & ZehraSec. All rights reserved.
+© 2025 Yashab Alam. All rights reserved.
 
 ### License
-The HackGPT Enterprise logo is proprietary to ZehraSec. Usage is permitted for:
+The HackGPT Enterprise logo is proprietary. Usage is permitted for:
 - Open source contributions to this project
 - Educational and non-commercial purposes
 - Social media sharing with proper attribution
@@ -78,12 +77,11 @@ The HackGPT Enterprise logo is proprietary to ZehraSec. Usage is permitted for:
 
 ### Attribution
 When using the logo, please include:
-"HackGPT Enterprise logo © ZehraSec"
+"HackGPT Enterprise logo © Yashab Alam"
 
 ## 🔗 Brand Resources
 
 ### Official Links
-- **Website**: [www.zehrasec.com](https://www.zehrasec.com)
 - **GitHub**: [@yashab-cyber](https://github.com/yashab-cyber)
 - **LinkedIn**: [Yashab Alam](https://linkedin.com/in/yashab-alam)
 
@@ -94,4 +92,4 @@ For complete brand guidelines and additional assets:
 
 ---
 
-*Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber) & [ZehraSec](https://www.zehrasec.com)*
+*Made with ❤️ by [Yashab Alam](https://github.com/yashab-cyber)*

@@ -194,9 +194,7 @@ This Code of Conduct is adapted from the [Contributor Covenant](https://www.cont
 ## 📞 Contact Information
 
 **Project Founder**: Yashab Alam  
-**Company**: ZehraSec  
 **Email**: yashabalam707@gmail.com  
-**Website**: [www.zehrasec.com](https://www.zehrasec.com)  
 **GitHub**: [@yashab-cyber](https://github.com/yashab-cyber)
 
 For questions about this Code of Conduct, please reach out through any of the contact methods above.

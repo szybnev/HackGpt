@@ -20,7 +20,7 @@
 
 **HackGPT Enterprise** is a production-ready, cloud-native AI-powered penetration testing platform designed for enterprise security teams. It combines advanced AI, machine learning, microservices architecture, and comprehensive security frameworks to deliver professional-grade cybersecurity assessments.
 
-**Created by [Yashab Alam](https://github.com/yashab-cyber), Founder & CEO of [ZehraSec](https://www.zehrasec.com)**
+**Created by [Yashab Alam](https://github.com/yashab-cyber)**
 
 > 💰 **Support the Project**: [Donate to HackGPT Development](DONATE.md) | Help us build the future of AI-powered penetration testing!
 
@@ -614,7 +614,6 @@ This project is licensed under the MIT License with additional enterprise terms:
 
 ### Connect with the Team
 - **Yashab Alam**: [GitHub](https://github.com/yashab-cyber) | [Instagram](https://www.instagram.com/yashab.alam) | [LinkedIn](https://www.linkedin.com/in/yashab-alam)
-- **ZehraSec**: [Website](https://www.zehrasec.com) | [Instagram](https://www.instagram.com/_zehrasec) | [LinkedIn](https://www.linkedin.com/company/zehrasec)
 
 ## 📊 Project Statistics
 
@@ -654,17 +653,11 @@ This project is licensed under the MIT License with additional enterprise terms:
 
 ### Core Development Team
 - **Lead Developer & Founder**: [Yashab Alam](https://github.com/yashab-cyber) - [@yashab.alam](https://www.instagram.com/yashab.alam) | [LinkedIn](https://www.linkedin.com/in/yashab-alam)
-- **Company**: [ZehraSec](https://www.zehrasec.com) - Cybersecurity Solutions & Research
 - **AI/ML Engineer**: Enterprise AI Team
 - **Security Engineer**: Enterprise Security Team
 - **DevOps Engineer**: Enterprise Infrastructure Team
 
-### ZehraSec Social Media
-- 🌐 **Website**: [www.zehrasec.com](https://www.zehrasec.com)
-- 📸 **Instagram**: [@_zehrasec](https://www.instagram.com/_zehrasec?igsh=bXM0cWl1ejdoNHM4)
-- 📘 **Facebook**: [ZehraSec Official](https://www.facebook.com/profile.php?id=61575580721849)
-- 🐦 **X (Twitter)**: [@zehrasec](https://x.com/zehrasec?t=Tp9LOesZw2d2yTZLVo0_GA&s=08)
-- 💼 **LinkedIn**: [ZehraSec Company](https://www.linkedin.com/company/zehrasec)
+
 - 💬 **WhatsApp**: [Business Channel](https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q)
 
 ### Acknowledgments
@@ -710,7 +703,7 @@ HackGPT Enterprise is designed for authorized security testing only:
   <img src="public/hackgpt-logo.png" alt="HackGPT Enterprise" width="150" height="auto">
   
   <h3>🚀 HackGPT Enterprise - Transforming Cybersecurity Through AI 🚀</h3>
-  <p><em>Made with ❤️ by Yashab Alam & ZehraSec for enterprise security teams worldwide</em></p>
+  <p><em>Made with ❤️ by Yashab Alam for enterprise security teams worldwide</em></p>
   
   <p>
     <a href="https://github.com/yashab-cyber/HackGPT">⭐ Star us on GitHub</a> |
@@ -721,13 +714,10 @@ HackGPT Enterprise is designed for authorized security testing only:
   </p>
 </div>
 
-### 🔗 Connect with ZehraSec & Yashab Alam
+### 🔗 Connect with Yashab Alam
 
 <div align="center">
   <p>
-    <a href="https://www.zehrasec.com">🌐 ZehraSec Website</a> |
-    <a href="https://www.instagram.com/_zehrasec">📸 ZehraSec Instagram</a> |
-    <a href="https://www.linkedin.com/company/zehrasec">💼 ZehraSec LinkedIn</a> |
     <a href="https://whatsapp.com/channel/0029Vaoa1GfKLaHlL0Kc8k1q">💬 WhatsApp Business</a>
   </p>
   

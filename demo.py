@@ -264,7 +264,7 @@ if __name__ == "__main__":
 
 
 # 🔗 Connect with Developer & Founder
-# Yashab Alam (Founder & CEO of ZehraSec)
+# Yashab Alam
 # Instagram: https://www.instagram.com/yashabcyber
 # X (Twitter): https://x.com/Yashab_cyber
 # LinkedIn: https://www.linkedin.com/in/yashab-alam
