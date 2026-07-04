@@ -432,6 +432,20 @@ class MitreAttackMapper:
         """Build the MITRE ATT&CK technique reference database."""
         return {
             # Initial Access
+            'T1195': {
+                'name': 'Supply Chain Compromise',
+                'tactic': 'Initial Access', 'tactic_id': 'TA0001',
+                'keywords': ['supply chain', 'backdoor dependency', 'compromised package',
+                             'xz backdoor', 'liblzma', 'cve-2024-3094'],
+                'log_patterns': [r'(?i)supply.*chain', r'(?i)xz.*backdoor', r'(?i)liblzma', r'(?i)cve-2024-3094'],
+            },
+            'T1611': {
+                'name': 'Escape to Host',
+                'tactic': 'Lateral Movement', 'tactic_id': 'TA0008',
+                'keywords': ['container escape', 'runc breakout', 'escape to host',
+                             'namespace escape', 'cve-2024-21626'],
+                'log_patterns': [r'(?i)container.*escape', r'(?i)runc.*breakout', r'(?i)escape.*host', r'(?i)cve-2024-21626'],
+            },
             'T1190': {
                 'name': 'Exploit Public-Facing Application',
                 'tactic': 'Initial Access', 'tactic_id': 'TA0001',
@@ -1220,6 +1234,66 @@ class AlertCorrelationEngine:
                 'Prepare for full incident response engagement',
             ],
         },
+        {
+            'name': 'Supply Chain Backdoor (XZ Utils) Detected',
+            'category': 'Initial Access',
+            'severity': ThreatSeverity.CRITICAL,
+            'description': 'Indicators of the CVE-2024-3094 XZ Utils / liblzma supply chain backdoor detected, which allows unauthorized SSH command execution bypass.',
+            'condition': 'keyword_match',
+            'keywords': ['cve-2024-3094', 'xz backdoor', 'liblzma', 'ssh_sandbox_violation', 'RSA_public_decrypt_compromise'],
+            'mitre_id': 'T1195',
+            'actions': [
+                'Immediately upgrade xz-utils to a clean patched version (e.g. 5.6.1+ or downgrade to 5.4.6)',
+                'Audit all sshd server logs for unusual connection patterns',
+                'Rebuild and redeploy compromised container images',
+                'Conduct full endpoint compromise assessment'
+            ],
+        },
+        {
+            'name': 'Container Breakout (runc Escape) Detected',
+            'category': 'Lateral Movement',
+            'severity': ThreatSeverity.CRITICAL,
+            'description': 'Suspicious file descriptor access matching container escape patterns (CVE-2024-21626 runc escape) detected.',
+            'condition': 'keyword_match',
+            'keywords': ['cve-2024-21626', 'runc escape', 'breakout', '/proc/self/fd/'],
+            'mitre_id': 'T1611',
+            'actions': [
+                'Isolate the container host immediately',
+                'Upgrade runc container runtime to the patched version (1.1.12+)',
+                'Scan for unauthorized host filesystem modifications',
+                'Audit container configurations for privileged flags'
+            ],
+        },
+        {
+            'name': 'LLM Prompt Injection / Jailbreak Attempt',
+            'category': 'Execution',
+            'severity': ThreatSeverity.HIGH,
+            'description': 'Adversarial inputs attempting to override LLM system rules or execute prompt injection (LLM01) detected.',
+            'condition': 'keyword_match',
+            'keywords': ['prompt injection', 'jailbreak', 'ignore previous instructions', 'dan mode', 'system prompt bypass'],
+            'mitre_id': 'T1190',
+            'actions': [
+                'Filter and sanitize LLM query inputs before processing',
+                'Implement robust system instructions boundary enforcement',
+                'Rate-limit user submissions to the LLM agent',
+                'Audit LLM agent excessive permission grants (LLM08)'
+            ],
+        },
+        {
+            'name': 'PHP CGI RCE (CVE-2024-4577) Exploitation',
+            'category': 'Initial Access',
+            'severity': ThreatSeverity.CRITICAL,
+            'description': 'Exploitation attempts for CVE-2024-4577 PHP CGI remote code execution detected.',
+            'condition': 'keyword_match',
+            'keywords': ['cve-2024-4577', 'php-cgi', 'allow_url_include', 'auto_prepend_file'],
+            'mitre_id': 'T1190',
+            'actions': [
+                'Disable PHP CGI configurations on web servers',
+                'Apply latest security patches to PHP engine',
+                'Implement WAF rules blocking query string script execution',
+                'Check for webshell drops on the web server directory'
+            ],
+        }
     ]
 
     def __init__(self):

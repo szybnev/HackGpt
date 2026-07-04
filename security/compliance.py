@@ -108,6 +108,89 @@ class ComplianceFrameworkMapper:
                     'Use security headers'
                 ],
                 'medium'
+            ),
+            'ssrf': ComplianceMapping(
+                'OWASP', 'A10:2021',
+                'Server-Side Request Forgery',
+                'Application fetches external resources without validating user-supplied URI input',
+                [
+                    'Sanitize and validate URL inputs',
+                    'Restrict egress access from app servers',
+                    'Use allow-lists for external domains',
+                    'Disable HTTP redirects'
+                ],
+                'high'
+            ),
+            'logging_failures': ComplianceMapping(
+                'OWASP', 'A09:2021',
+                'Security Logging and Monitoring Failures',
+                'Insufficient logging, auditing, and threat detection',
+                [
+                    'Enable centralized SIEM forwarding',
+                    'Log authentication events and failures',
+                    'Implement real-time alert correlation',
+                    'Ensure tamper-proof storage of audit logs'
+                ],
+                'medium'
+            ),
+            'software_integrity_failures': ComplianceMapping(
+                'OWASP', 'A08:2021',
+                'Software and Data Integrity Failures',
+                'Using dependencies from untrusted sources or without integrity checks',
+                [
+                    'Use signed artifact repositories',
+                    'Verify package hashes and checksums',
+                    'Scan third-party software for backdoors',
+                    'Implement secure CI/CD build environments'
+                ],
+                'critical'
+            ),
+            # OWASP API Security Top 10 mappings
+            'bola': ComplianceMapping(
+                'OWASP_API', 'API1:2023',
+                'Broken Object Level Authorization',
+                'API endpoints do not validate user access permissions for target resource IDs',
+                [
+                    'Implement authorization checks for every object reference',
+                    'Use random, unguessable UUIDs for resource keys',
+                    'Avoid relying on client-supplied user parameters'
+                ],
+                'high'
+            ),
+            # OWASP LLM Applications Top 10 mappings (2025/2026)
+            'prompt_injection': ComplianceMapping(
+                'OWASP_LLM', 'LLM01',
+                'Prompt Injection',
+                'Manipulating an LLM via crafted prompt input causing unauthorized behaviors',
+                [
+                    'Separate user input from system instructions',
+                    'Implement input filtering and sanitization',
+                    'Use adversarial prompt detection models',
+                    'Establish strict sandbox boundaries'
+                ],
+                'high'
+            ),
+            'insecure_output_handling': ComplianceMapping(
+                'OWASP_LLM', 'LLM02',
+                'Insecure Output Handling',
+                'Insufficient validation of LLM outputs before displaying or executing them',
+                [
+                    'Sanitize LLM outputs before parsing as HTML or executing code',
+                    'Use output filters to block sensitive disclosures',
+                    'Implement client-side encoding'
+                ],
+                'high'
+            ),
+            'excessive_agency': ComplianceMapping(
+                'OWASP_LLM', 'LLM08',
+                'Excessive Agency',
+                'LLM agent granted excessive permissions or capabilities without safety guardrails',
+                [
+                    'Restrict tool/plugin access using least-privilege principles',
+                    'Enforce human-in-the-loop approvals for critical actions',
+                    'Enforce API rate limits and strict schemas'
+                ],
+                'high'
             )
         }
         
