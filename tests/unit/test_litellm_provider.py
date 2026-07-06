@@ -154,3 +154,137 @@ def test_import_error_when_litellm_missing(monkeypatch):
             model_id="gpt-4o",
             messages=[{"role": "user", "content": "Hi"}],
         )
+
+
+# ---------------------------------------------------------------------------
+# Edge-case tests
+# ---------------------------------------------------------------------------
+
+def _make_litellm_stub(monkeypatch):
+    """Helper: install a fake litellm module and return it."""
+    fake = types.ModuleType("litellm")
+    fake.completion = mock.MagicMock(name="litellm.completion")
+    monkeypatch.setitem(sys.modules, "litellm", fake)
+    return fake
+
+
+def test_auth_error_propagates(monkeypatch):
+    """AuthenticationError (401) should propagate, not be swallowed."""
+    fake = _make_litellm_stub(monkeypatch)
+
+    class FakeAuthError(Exception):
+        pass
+
+    fake.completion.side_effect = FakeAuthError("Invalid API key")
+
+    prov = LiteLLMProvider(api_key="bad-key")
+    with pytest.raises(FakeAuthError, match="Invalid API key"):
+        prov.chat_completion(
+            model_id="gpt-4o",
+            messages=[{"role": "user", "content": "Hi"}],
+        )
+    fake.completion.assert_called_once()
+
+
+def test_rate_limit_error_propagates(monkeypatch):
+    """RateLimitError (429) should propagate to the caller."""
+    fake = _make_litellm_stub(monkeypatch)
+
+    class FakeRateLimitError(Exception):
+        pass
+
+    fake.completion.side_effect = FakeRateLimitError("Rate limit exceeded")
+
+    prov = LiteLLMProvider(api_key="key")
+    with pytest.raises(FakeRateLimitError, match="Rate limit"):
+        prov.chat_completion(
+            model_id="gpt-4o",
+            messages=[{"role": "user", "content": "Hi"}],
+        )
+
+
+def test_empty_response_content(monkeypatch):
+    """None content in response.choices[0].message should raise AttributeError."""
+    fake = _make_litellm_stub(monkeypatch)
+    mock_choice = mock.MagicMock()
+    mock_choice.message.content = None
+    mock_response = mock.MagicMock()
+    mock_response.choices = [mock_choice]
+    fake.completion.return_value = mock_response
+
+    prov = LiteLLMProvider(api_key="key")
+    result = prov.chat_completion(
+        model_id="gpt-4o",
+        messages=[{"role": "user", "content": "Hi"}],
+    )
+    assert result is None
+
+
+def test_empty_choices_raises(monkeypatch):
+    """Empty choices list should raise IndexError."""
+    fake = _make_litellm_stub(monkeypatch)
+    mock_response = mock.MagicMock()
+    mock_response.choices = []
+    fake.completion.return_value = mock_response
+
+    prov = LiteLLMProvider(api_key="key")
+    with pytest.raises(IndexError):
+        prov.chat_completion(
+            model_id="gpt-4o",
+            messages=[{"role": "user", "content": "Hi"}],
+        )
+
+
+def test_timeout_error_propagates(monkeypatch):
+    """Timeout should propagate to the caller."""
+    fake = _make_litellm_stub(monkeypatch)
+    fake.completion.side_effect = TimeoutError("Request timed out")
+
+    prov = LiteLLMProvider(api_key="key")
+    with pytest.raises(TimeoutError, match="timed out"):
+        prov.chat_completion(
+            model_id="gpt-4o",
+            messages=[{"role": "user", "content": "Hi"}],
+        )
+
+
+def test_model_string_forwarded_as_is(monkeypatch):
+    """LiteLLM model strings (provider/model format) must be forwarded verbatim."""
+    fake = _make_litellm_stub(monkeypatch)
+    mock_choice = mock.MagicMock()
+    mock_choice.message.content = "ok"
+    mock_response = mock.MagicMock()
+    mock_response.choices = [mock_choice]
+    fake.completion.return_value = mock_response
+
+    prov = LiteLLMProvider(api_key="key")
+    for model_id in [
+        "anthropic/claude-sonnet-4-20250514",
+        "bedrock/anthropic.claude-3",
+        "gpt-4o",
+        "gemini/gemini-2.5-flash",
+    ]:
+        fake.completion.reset_mock()
+        prov.chat_completion(
+            model_id=model_id,
+            messages=[{"role": "user", "content": "test"}],
+        )
+        assert fake.completion.call_args[1]["model"] == model_id
+
+
+def test_response_format_json_not_injected(monkeypatch):
+    """response_format should NOT be auto-injected (not all providers support it)."""
+    fake = _make_litellm_stub(monkeypatch)
+    mock_choice = mock.MagicMock()
+    mock_choice.message.content = "ok"
+    mock_response = mock.MagicMock()
+    mock_response.choices = [mock_choice]
+    fake.completion.return_value = mock_response
+
+    prov = LiteLLMProvider(api_key="key")
+    prov.chat_completion(
+        model_id="gpt-4o",
+        messages=[{"role": "user", "content": "Hi"}],
+    )
+    call_kwargs = fake.completion.call_args[1]
+    assert "response_format" not in call_kwargs
