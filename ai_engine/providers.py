@@ -16,6 +16,7 @@ from typing import Dict, List, Optional, Tuple
 # optional dependencies are missing.
 try:
     import openai
+
     _HAS_OPENAI = True
 except ImportError:
     openai = None  # type: ignore[assignment]
@@ -23,6 +24,7 @@ except ImportError:
 
 try:
     import requests
+
     _HAS_REQUESTS = True
 except ImportError:
     requests = None  # type: ignore[assignment]
@@ -41,6 +43,7 @@ __all__ = [
     "GLMProvider",
     "OllamaProvider",
     "OpenRouterProvider",
+    "LiteLLMProvider",
     "ProviderFactory",
 ]
 
@@ -48,6 +51,7 @@ __all__ = [
 # ---------------------------------------------------------------------------
 # Abstract base class
 # ---------------------------------------------------------------------------
+
 
 class BaseProvider(ABC):
     """Abstract base class for all AI provider clients.
@@ -94,6 +98,7 @@ class BaseProvider(ABC):
 # ---------------------------------------------------------------------------
 # OpenAI
 # ---------------------------------------------------------------------------
+
 
 class OpenAIProvider(BaseProvider):
     """Provider client for the OpenAI API (GPT family).
@@ -155,6 +160,7 @@ class OpenAIProvider(BaseProvider):
 # Anthropic
 # ---------------------------------------------------------------------------
 
+
 class AnthropicProvider(BaseProvider):
     """Provider client for the Anthropic Messages API (Claude family).
 
@@ -166,7 +172,9 @@ class AnthropicProvider(BaseProvider):
 
     def __init__(self, api_key: str = None, base_url: str = None):
         resolved_key = api_key or os.getenv("ANTHROPIC_API_KEY")
-        super().__init__(api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL)
+        super().__init__(
+            api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL
+        )
 
     def chat_completion(
         self,
@@ -192,7 +200,9 @@ class AnthropicProvider(BaseProvider):
             "messages": messages,
         }
         try:
-            resp = requests.post(self.base_url, headers=headers, json=payload, timeout=120)
+            resp = requests.post(
+                self.base_url, headers=headers, json=payload, timeout=120
+            )
             resp.raise_for_status()
             data = resp.json()
             return data["content"][0]["text"]
@@ -212,6 +222,7 @@ class AnthropicProvider(BaseProvider):
 # Google (Gemini / Generative Language API)
 # ---------------------------------------------------------------------------
 
+
 class GoogleProvider(BaseProvider):
     """Provider client for Google Generative Language API (Gemini family).
 
@@ -222,7 +233,9 @@ class GoogleProvider(BaseProvider):
 
     def __init__(self, api_key: str = None, base_url: str = None):
         resolved_key = api_key or os.getenv("GOOGLE_API_KEY")
-        super().__init__(api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL)
+        super().__init__(
+            api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL
+        )
 
     def chat_completion(
         self,
@@ -238,13 +251,11 @@ class GoogleProvider(BaseProvider):
                 "Install it with: pip install requests"
             )
         url = (
-            f"{self.base_url}/models/{model_id}:generateContent"
-            f"?key={self.api_key}"
+            f"{self.base_url}/models/{model_id}:generateContent" f"?key={self.api_key}"
         )
         # Flatten messages into a single prompt text for the REST API.
         combined_text = "\n".join(
-            f"{msg.get('role', 'user')}: {msg.get('content', '')}"
-            for msg in messages
+            f"{msg.get('role', 'user')}: {msg.get('content', '')}" for msg in messages
         )
         payload = {
             "contents": [{"parts": [{"text": combined_text}]}],
@@ -274,6 +285,7 @@ class GoogleProvider(BaseProvider):
 # DeepSeek (OpenAI-compatible)
 # ---------------------------------------------------------------------------
 
+
 class DeepSeekProvider(BaseProvider):
     """Provider client for the DeepSeek API (OpenAI-compatible).
 
@@ -284,7 +296,9 @@ class DeepSeekProvider(BaseProvider):
 
     def __init__(self, api_key: str = None, base_url: str = None):
         resolved_key = api_key or os.getenv("DEEPSEEK_API_KEY")
-        super().__init__(api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL)
+        super().__init__(
+            api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL
+        )
         self._client: Optional[object] = None
 
     def _get_client(self) -> "openai.OpenAI":
@@ -334,6 +348,7 @@ class DeepSeekProvider(BaseProvider):
 # GLM / Zhipu (BigModel)
 # ---------------------------------------------------------------------------
 
+
 class GLMProvider(BaseProvider):
     """Provider client for the GLM / Zhipu BigModel API.
 
@@ -345,7 +360,9 @@ class GLMProvider(BaseProvider):
 
     def __init__(self, api_key: str = None, base_url: str = None):
         resolved_key = api_key or os.getenv("GLM_API_KEY") or os.getenv("ZHIPU_API_KEY")
-        super().__init__(api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL)
+        super().__init__(
+            api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL
+        )
 
     def chat_completion(
         self,
@@ -371,7 +388,9 @@ class GLMProvider(BaseProvider):
             "temperature": temperature,
         }
         try:
-            resp = requests.post(self.base_url, headers=headers, json=payload, timeout=120)
+            resp = requests.post(
+                self.base_url, headers=headers, json=payload, timeout=120
+            )
             resp.raise_for_status()
             data = resp.json()
             return data["choices"][0]["message"]["content"]
@@ -391,6 +410,7 @@ class GLMProvider(BaseProvider):
 # Ollama (local LLM)
 # ---------------------------------------------------------------------------
 
+
 class OllamaProvider(BaseProvider):
     """Provider client for locally-running Ollama instances.
 
@@ -401,7 +421,9 @@ class OllamaProvider(BaseProvider):
     _DEFAULT_BASE_URL = "http://localhost:11434"
 
     def __init__(self, api_key: str = None, base_url: str = None):
-        resolved_url = base_url or os.getenv("LOCAL_LLM_ENDPOINT", self._DEFAULT_BASE_URL)
+        resolved_url = base_url or os.getenv(
+            "LOCAL_LLM_ENDPOINT", self._DEFAULT_BASE_URL
+        )
         # Ollama does not require an API key.
         super().__init__(api_key=api_key, base_url=resolved_url)
 
@@ -442,9 +464,7 @@ class OllamaProvider(BaseProvider):
         if not _HAS_REQUESTS:
             return False
         try:
-            resp = requests.get(
-                f"{self.base_url}/api/tags", timeout=5
-            )
+            resp = requests.get(f"{self.base_url}/api/tags", timeout=5)
             return resp.status_code == 200
         except Exception:
             return False
@@ -458,6 +478,7 @@ class OllamaProvider(BaseProvider):
 # OpenRouter (OpenAI-compatible aggregator)
 # ---------------------------------------------------------------------------
 
+
 class OpenRouterProvider(BaseProvider):
     """Provider client for the OpenRouter API (OpenAI-compatible).
 
@@ -470,7 +491,9 @@ class OpenRouterProvider(BaseProvider):
 
     def __init__(self, api_key: str = None, base_url: str = None):
         resolved_key = api_key or os.getenv("OPENROUTER_API_KEY")
-        super().__init__(api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL)
+        super().__init__(
+            api_key=resolved_key, base_url=base_url or self._DEFAULT_BASE_URL
+        )
         self._client: Optional[object] = None
 
     def _get_client(self) -> "openai.OpenAI":
@@ -521,6 +544,82 @@ class OpenRouterProvider(BaseProvider):
 
 
 # ---------------------------------------------------------------------------
+# LiteLLM (unified AI gateway)
+# ---------------------------------------------------------------------------
+
+
+class LiteLLMProvider(BaseProvider):
+    """Provider client for the LiteLLM AI gateway.
+
+    LiteLLM provides a unified interface to 100+ LLM providers (OpenAI,
+    Anthropic, Google, Azure, Bedrock, Ollama, and more) using the OpenAI
+    request/response format.  Falls back to the ``LITELLM_API_KEY``
+    environment variable when no *api_key* is supplied explicitly.
+
+    Model identifiers use the LiteLLM format, e.g.
+    ``anthropic/claude-sonnet-4-20250514``, ``gpt-4o``,
+    ``gemini/gemini-2.5-flash``, ``azure/my-deployment``.
+    """
+
+    def __init__(self, api_key: str = None, base_url: str = None):
+        resolved_key = api_key or os.getenv("LITELLM_API_KEY")
+        resolved_url = base_url or os.getenv("LITELLM_API_BASE")
+        super().__init__(api_key=resolved_key, base_url=resolved_url)
+
+    def chat_completion(
+        self,
+        model_id: str,
+        messages: List[Dict[str, str]],
+        max_tokens: int = 4096,
+        temperature: float = 0.7,
+    ) -> str:
+        """Call an LLM via the LiteLLM unified gateway."""
+        try:
+            import litellm
+        except ImportError:
+            raise ImportError(
+                "The 'litellm' package is required for LiteLLMProvider. "
+                "Install it with: pip install litellm"
+            )
+
+        kwargs: Dict = {
+            "model": model_id,
+            "messages": messages,
+            "max_tokens": max_tokens,
+            "temperature": temperature,
+            "drop_params": True,
+        }
+        if self.api_key:
+            kwargs["api_key"] = self.api_key
+        if self.base_url:
+            kwargs["api_base"] = self.base_url
+
+        try:
+            response = litellm.completion(**kwargs)
+            return response.choices[0].message.content
+        except Exception as exc:
+            logger.error("LiteLLM chat completion failed: %s", exc)
+            raise
+
+    def is_available(self) -> bool:
+        """Available when an API key or provider-specific env var is set."""
+        if self.api_key:
+            return True
+        check_vars = [
+            "OPENAI_API_KEY",
+            "ANTHROPIC_API_KEY",
+            "GEMINI_API_KEY",
+            "AZURE_API_KEY",
+            "LITELLM_API_KEY",
+        ]
+        return any(os.getenv(v) for v in check_vars)
+
+    @property
+    def provider_name(self) -> str:
+        return "LiteLLM"
+
+
+# ---------------------------------------------------------------------------
 # Provider Factory
 # ---------------------------------------------------------------------------
 
@@ -533,6 +632,7 @@ _PROVIDER_CLASS_MAP: Dict[ModelProvider, type] = {
     ModelProvider.GLM: GLMProvider,
     ModelProvider.LOCAL: OllamaProvider,
     ModelProvider.OPENROUTER: OpenRouterProvider,
+    ModelProvider.LITELLM: LiteLLMProvider,
 }
 
 
@@ -575,9 +675,7 @@ class ProviderFactory:
         return cls._providers[provider]
 
     @classmethod
-    def get_provider_for_model(
-        cls, model_id: str
-    ) -> Tuple[BaseProvider, ModelInfo]:
+    def get_provider_for_model(cls, model_id: str) -> Tuple[BaseProvider, ModelInfo]:
         """Look up a model in the catalog and return its provider instance.
 
         Args:
@@ -592,9 +690,7 @@ class ProviderFactory:
         """
         model_info = get_model_info(model_id)
         if model_info is None:
-            raise ValueError(
-                f"Model '{model_id}' not found in MODEL_CATALOG"
-            )
+            raise ValueError(f"Model '{model_id}' not found in MODEL_CATALOG")
         provider = cls.get_provider(model_info.provider)
         return provider, model_info
 
@@ -613,7 +709,5 @@ class ProviderFactory:
                 if provider.is_available():
                     available.append(member)
             except (ValueError, Exception) as exc:
-                logger.debug(
-                    "Provider %s not available: %s", member.value, exc
-                )
+                logger.debug("Provider %s not available: %s", member.value, exc)
         return available
